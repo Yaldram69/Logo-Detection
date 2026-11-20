@@ -54,3 +54,16 @@ Input is an image or video path. The notebook's model and image paths are hardco
 - In the notebook's last cell, `cv2.imshow(results, "results")` has its arguments reversed and will fail. Use `results[0].show()` or save and open the output file instead.
 - `cv2` is imported after it is first needed in the notebook; run the import cell first.
 - Accuracy on the 3000-class set is not reported in the repository beyond the two confusion matrix images.
+
+## Pretrained YOLO weights (not included)
+
+The following off-the-shelf Ultralytics checkpoints were removed from this repository because they are publicly downloadable. The code loads them by name, and Ultralytics downloads them automatically on first use:
+
+- `yolo11n.pt`
+
+```python
+from ultralytics import YOLO
+model = YOLO("yolov8n.pt")  # downloaded automatically if not present
+```
+
+Or download them manually from https://github.com/ultralytics/assets/releases
